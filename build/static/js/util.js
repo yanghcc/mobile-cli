@@ -1,0 +1,1 @@
+"use strict";var lnv=lnv||{},lnv=function(){function n(n){var t=/^(1+\d{10})$/;return!!t.test(n)}function t(n){var t=new RegExp("(^|&)"+n+"=([^&]*)(&|$)"),e=window.location.search.substr(1).match(t);return null!=e?unescape(e[2]):null}return{checkPhone:n,getQueryString:t}}();

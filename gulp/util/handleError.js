@@ -1,10 +1,10 @@
-var notify = require("gulp-notify");
+var notify = require('gulp-notify');
 
-module.exports = function() {
+module.exports = function () {
     var args = Array.prototype.slice.call(arguments);
     notify.onError({
         title: 'error',
         message: '<%=error.message %>'
-    }).apply(this, args); //替换为当前对象
-    this.emit(); //提交
-}
+    }).apply(this, args); // 替换为当前对象
+    this.emit(); // 提交
+};
