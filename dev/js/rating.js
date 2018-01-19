@@ -2,105 +2,35 @@
  * @Author: kevin
  * @Date:   2015-11-13 11:46:23
  * @Last Modified by: mikey.zhaopeng
- * @Last Modified time: 2018-01-16 15:05:15
+ * @Last Modified time: 2018-01-19 14:25:10
  */
 
 var Project = (function () {
 
-  /**
-   * 点击按钮发送ajax请求
-   * 1. 考虑ajax请求失败的情况
-   * 2. 考虑ajax请求成功，但是状态不是200的情况
-   * 3. 考虑ajax请求成功，状态是200，但是没有数据的情况
-   * 4. 考虑ajax重复请求的情况
-   * 5. 考虑ajax请求接口时间长的交互效果
-   */
-
-  var submit = function () {
-
-      var me = $(this);
-
-      if (me.hasClass('disabled')) {
-
-          return;
-
-      }
-      me.addClass('disabled');
-
-      var sendData = {
-          time: 3
+    var message = function (type, msg) {
+        var div = '<div class="msg-wrapper resetAnimation  fadeInDown" data-role="' + type + '">' +
+        '<i id="close-btn" class="close-btn"></i>' +
+        '<p class="msg-title">' + msg + '</p>' +
+        '</div>';
+        var timer = 300;
+        var duration = 3000;
+        var animate = function () {
+          $('.msg-wrapper').addClass('fadeOutUp');
+          setTimeout(function () {
+            $('.msg-wrapper').remove();
+          }, timer);
+        };
+        var timeout = setTimeout(function () {
+          animate();
+        }, duration);
+        $('body').append(div).on('click', '#close-btn', function () {
+          clearTimeout(timeout);
+          animate();
+        });
       };
 
-      $.ajax({
-              url: 'http://wiki.xyzphp.com/t.php',
-              type: 'POST',
-              data: sendData,
-              beforeSend: function () {
-                  lnv.pageloading();
-                  // lnv.iconloading('#submit_btn');
-              }
-          })
-          .done(function (res) {
-
-              res = typeof(res) === 'string' ? JSON.parse(res) : res;
-
-              if (res.status == 200) {
-
-                  if (res.data.length === 0) {
-
-                      lnv.alert({
-                          title: '提示',
-                          content: '没有数据',
-                          alertBtnText: '确定',
-                          alertHandler: function () {
-                              alert('点击了确定');
-                          }
-                      });
-
-                  }
-                  else {
-
-                      // do something
-
-                  }
-
-              }
-              else {
-
-                  alert('error');
-
-              }
-          })
-          .fail(function (jqXHR, textStatus, errorThrown) {
-
-              alert('error');
-
-          })
-          .always(function () {
-
-              lnv.destroyloading();
-              // lnv.destroyloading('#submit_btn');
-
-              me.removeClass('disabled');
-
-          });
-  };
-
-
-  var bindEvent = function () {
-
-      $('#submit_btn').on('tap', submit);
-
-  };
-
-  var init = function () {
-
-      bindEvent();
-
-  };
-
   return {
-      init: init
+    message: message
   };
 
 

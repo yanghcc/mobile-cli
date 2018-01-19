@@ -3,8 +3,8 @@
 /*
 * @Author: kevin
 * @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-08-02 15:22:54
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-01-16 15:55:12
 */
 
 /* 样式重置 */
@@ -291,208 +291,86 @@ h3 {
 
 /* 色板 */
 
-/*
-* @Author: kevin
-* @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-04-05 14:32:52
-* @参考地址: http://flatuicolors.com/
-*/
-
 /* 规则 */
 
-/*
-* @Author: kevin
-* @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-08-02 15:21:57
-*/
-
-/**
- * 左右margin为auto
- */
-
-/**
- * 水平居中
- * @param  {number} $width 设置宽度,默认90%
- */
-
 /* 工具类 */
-
-/*
-* @Author: kevin
-* @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-08-02 15:20:56
-*/
-
-/**
- * 隐藏元素
- */
-
-.hidden,
-[hidden] {
-  display: none !important;
-}
-
-/**
- * 弹性图片
- */
-
-.lnv-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/**
- * 清除浮动
- */
-
-.clear {
-  clear: both;
-}
-
-/**
- * 解決高度塌陷問題
- */
-
-.clearfix:after {
-  content: ' ';
-  display: block;
-  height: 0;
-  clear: both;
-  visibility: hidden;
-}
-
-.clearfix {
-  zoom: 1;
-}
-
-/**
- * 单行文本超过宽度显示为三个点
- */
-
-.dot {
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
-
-/**
- * 三角符号
- */
-
-.lnv-triangle {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 0.026667rem;
-  vertical-align: middle;
-  border-top: 0.053333rem dashed;
-  border-top: 0.053333rem solid \9;
-  border-right: 0.053333rem solid transparent;
-  border-left: 0.053333rem solid transparent;
-}
-
-.noselect {
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  -o-user-select: none;
-  user-select: none;
-}
 
 /* 动画效果 */
 
 /*
 * @Author: kevin
 * @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-09-04 13:18:20
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-01-19 14:33:59
 */
+
+@keyframes slideInDown {
+  from {
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+.slideInDown {
+  animation-name: slideInDown;
+}
+
+@keyframes slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.slideOutUp {
+  animation-name: slideOutUp;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fadeInDown {
+  animation-name: fadeInDown;
+}
+
+@keyframes fadeOutUp {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.fadeOutUp {
+  animation-name: fadeOutUp;
+}
+
+.resetAnimation {
+  animation-duration: .3s;
+  animation-fill-mode: both;
+}
 
 /* 组件库 */
-
-/*
-* @Author: kevin
-* @Date:   2015-11-30 19:14:34
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-09-04 13:53:25
-*/
-
-/* example 根据项目进行完善*/
-
-.lnv-btn {
-  position: relative;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 0.186667rem;
-  padding-right: 0.186667rem;
-  box-sizing: border-box;
-  font-size: 0.32rem;
-  text-align: center;
-  text-decoration: none;
-  color: #fff;
-  height: 0.8rem;
-  line-height: 0.8rem;
-  vertical-align: middle;
-  border-radius: 0.106667rem;
-  -webkit-tap-highlight-color: transparent;
-  overflow: hidden;
-}
-
-.lnv-btn-disabled {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.lnv-btn-disabled:active {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.lnv-btn-primary {
-  background-color: #04BE02;
-}
-
-.lnv-btn-primary:not(.lnv-btn-disabled):visited {
-  color: #fff;
-}
-
-.lnv-btn-primary:not(.lnv-btn-disabled):active {
-  color: rgba(255, 255, 255, 0.4);
-  background-color: #039702;
-}
-
-.lnv-btn-warn {
-  background-color: #EF4F4F;
-}
-
-.lnv-btn-warn:not(.btn-disabled):visited {
-  color: #fff;
-}
-
-.lnv-btn-warn:not(.lnv-btn-disabled):active {
-  color: rgba(255, 255, 255, 0.4);
-  background-color: #C13E3E;
-}
-
-.lnv-btn + .lnv-btn {
-  margin-top: 0.2rem;
-}
-
-button.lnv-btn,
-input.lnv-btn {
-  width: 100%;
-  border-width: 0;
-  outline: 0;
-  -webkit-appearance: none;
-}
-
-button.lnv-btn:focus,
-input.lnv-btn:focus {
-  outline: 0;
-}
 
 /* loading */
 
@@ -670,32 +548,6 @@ input.lnv-btn:focus {
 }
 
 /* icon */
-
-/*
-* @Author: kevin
-* @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-09-04 13:26:07
-*/
-
-/* icon */
-
-@font-face {
-  font-family: "iconfont";
-  src: url("../font/iconfont.eot");
-  /* IE9*/
-  src: url("../font/iconfont.eot?#iefix") format("embedded-opentype"), url("../font/iconfont.woff") format("woff"), url("../font/iconfont.ttf") format("truetype"), url("../font/iconfont.svg#iconfont") format("svg");
-  /* iOS 4.1- */
-}
-
-.icon {
-  font-family: "iconfont" !important;
-  font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  -webkit-text-stroke-width: 0.2px;
-  -moz-osx-font-smoothing: grayscale;
-  transition: font-size 0.25s ease-out 0s;
-}
 
 /* public style */
 

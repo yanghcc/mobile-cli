@@ -3,8 +3,8 @@
 /*
 * @Author: kevin
 * @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-08-02 15:20:56
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-01-17 16:08:38
 */
 
 
@@ -70,7 +70,7 @@
  * 三角符号
  */
 
-.lnv-triangle {
+.triangle {
     display: inline-block;
     width: 0;
     height: 0;
@@ -80,6 +80,28 @@
     border-top: 4px solid \9;
     border-right: 4px solid transparent;
     border-left: 4px solid transparent;
+}
+/**
+ * 菱形符号
+ */
+
+.diamond {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+    &::before{
+        content: "";
+        position: absolute;
+        left: -30px;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-left: 50px solid transparent;
+        border-right: 50px solid transparent;
+        border-top: 100px solid red;
+    }
 }
 
 .noselect {

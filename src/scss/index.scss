@@ -46,38 +46,38 @@
 	margin-top: 20px;
 }
 
-.sprite-list {
-  @include center(600px);
-}
+// .sprite-list {
+//   @include center(600px);
+// }
 
-.sprite {
-  width: 100px;
-  height: 80px;
-  float: left;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
+// .sprite {
+//   width: 100px;
+//   height: 80px;
+//   float: left;
+//   margin-top: 20px;
+//   margin-bottom: 20px;
+// }
 
-.sprite-item1 {
-  @include sprite-pic1;
-}
+// .sprite-item1 {
+//   @include sprite-pic1;
+// }
 
-.sprite-item2 {
-  @include sprite-pic2;
-}
+// .sprite-item2 {
+//   @include sprite-pic2;
+// }
 
-.sprite-item3 {
-  @include sprite-pic3;
-}
+// .sprite-item3 {
+//   @include sprite-pic3;
+// }
 
-.sprite-item4 {
-  @include sprite-pic4;
-}
+// .sprite-item4 {
+//   @include sprite-pic4;
+// }
 
-.sprite-item5 {
-  @include sprite-pic5;
-}
+// .sprite-item5 {
+//   @include sprite-pic5;
+// }
 
-.sprite-item6 {
-  @include sprite-pic6;
-}
+// .sprite-item6 {
+//   @include sprite-pic6;
+// }

@@ -5,16 +5,16 @@
 /*
 * @Author: kevin
 * @Date:   2016-04-05 13:37:33
-* @Last Modified by:   kevin
-* @Last Modified time: 2016-08-02 15:21:57
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-01-19 14:03:10
 */
 
 /**
  * 左右margin为auto
  */
 
-.icon_lists,
-.sprite-list {
+.sprite-list,
+.btn-bar .submit-btn {
   margin-left: auto;
   margin-right: auto;
 }
@@ -24,48 +24,118 @@
  * @param  {number} $width 设置宽度,默认90%
  */
 
+/*
+* @Author: kevin
+* @Date:   2016-04-05 13:37:33
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2018-01-17 16:08:38
+*/
+
+/**
+ * 隐藏元素
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/**
+ * 弹性图片
+ */
+
+.lnv-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/**
+ * 清除浮动
+ */
+
+.clear {
+  clear: both;
+}
+
+/**
+ * 解決高度塌陷問題
+ */
+
+.clearfix:after {
+  content: ' ';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+.clearfix {
+  zoom: 1;
+}
+
+/**
+ * 单行文本超过宽度显示为三个点
+ */
+
+.dot {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/**
+ * 三角符号
+ */
+
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.026667rem;
+  vertical-align: middle;
+  border-top: 0.053333rem dashed;
+  border-top: 0.053333rem solid \9;
+  border-right: 0.053333rem solid transparent;
+  border-left: 0.053333rem solid transparent;
+}
+
+/**
+ * 菱形符号
+ */
+
+.diamond {
+  width: 0;
+  height: 0;
+  border-left: 0.666667rem solid transparent;
+  border-right: 0.666667rem solid transparent;
+  border-bottom: 1.333333rem solid red;
+}
+
+.diamond::before {
+  content: "";
+  position: absolute;
+  left: -0.4rem;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-left: 0.666667rem solid transparent;
+  border-right: 0.666667rem solid transparent;
+  border-top: 1.333333rem solid red;
+}
+
+.noselect {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+
 .sprite {
   background-image: url("../img/sprite.png");
   background-repeat: no-repeat;
-  background-size: 4.04rem 2.44rem;
-}
-
-/* 服务工单列表页面 */
-
-.main {
-  padding: 0.266667rem;
-}
-
-.icon_lists {
-  width: 9.333333rem;
-}
-
-.icon_lists li {
-  float: left;
-  width: 1.333333rem;
-  height: 1.333333rem;
-  text-align: center;
-}
-
-.icon_lists .icon {
-  font-size: 0.56rem;
-  line-height: 1.333333rem;
-  margin: 0.133333rem 0;
-  color: #333;
-  transition: font-size 0.25s ease-out 0s;
-}
-
-.icon_lists .icon:hover {
-  font-size: 1.333333rem;
-}
-
-.base_list {
-  text-align: center;
-  font-size: 0.346667rem;
-}
-
-.btn_wrap {
-  margin-top: 0.266667rem;
+  background-size: 10rem 6.426667rem;
 }
 
 .sprite-list {
@@ -73,33 +143,167 @@
 }
 
 .sprite {
-  width: 1.333333rem;
-  height: 1.066667rem;
-  float: left;
-  margin-top: 0.266667rem;
-  margin-bottom: 0.266667rem;
+  height: 2.186667rem;
 }
 
-.sprite-item1 {
-  background-position: -1.586667rem 0;
-}
-
-.sprite-item2 {
+.sprite-title-bg1 {
   background-position: 0 0;
 }
 
-.sprite-item3 {
-  background-position: -1.346667rem -1.36rem;
+.sprite-title-bg2 {
+  background-position: 0 -2.293333rem;
 }
 
-.sprite-item4 {
-  background-position: -2.933333rem 0;
+.sprite-title-bg3 {
+  background-position: 0 -4.506667rem;
 }
 
-.sprite-item5 {
-  background-position: 0 -1.36rem;
+body {
+  padding-bottom: 2.333333rem;
 }
 
-.sprite-item6 {
-  background-position: -2.933333rem -1.2rem;
+.main .header img {
+  width: 100%;
+  display: block;
+}
+
+.main .black-bg {
+  height: 5.706667rem;
+  background: url("../img/black-bg.png") no-repeat center center;
+  background-size: cover;
+}
+
+.main .black-bg .content {
+  color: #fff;
+  border: 0.053333rem solid #fff;
+  margin-bottom: 0.4rem;
+}
+
+.main .white-bg {
+  background-color: #fff;
+}
+
+.main .white-bg .content {
+  color: #262626;
+  border: 0.053333rem solid #000;
+  margin-bottom: 0.666667rem;
+}
+
+.main .content {
+  margin-left: 0.226667rem;
+  margin-right: 0.226667rem;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  padding-bottom: 0.266667rem;
+}
+
+.main .rating-list {
+  width: 50%;
+  padding-left: 0.4rem;
+  padding-right: 0.133333rem;
+  margin-top: 0.266667rem;
+}
+
+.main .rating-list .list-title {
+  font-size: 0.293333rem;
+  padding-left: 0.186667rem;
+  background: url("../img/symbol.png") no-repeat left center;
+  background-size: 0.16rem 0.266667rem;
+}
+
+.main .rating-list .list-label {
+  display: block;
+  position: relative;
+  padding-left: 0.306667rem;
+  margin-left: 0.186667rem;
+}
+
+.main .rating-list .list-label:before {
+  content: "";
+  display: inline-block;
+  vertical-align: middle;
+  width: 0.16rem;
+  height: 0.16rem;
+  border: 1px solid #727272;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0.12rem;
+}
+
+.main .rating-list input[type='radio'] {
+  display: none;
+}
+
+.main .rating-list input[type='radio']:checked + label:before {
+  background-color: #f00;
+  border: 1px solid #f00;
+}
+
+.btn-bar {
+  position: fixed;
+  bottom: 0;
+  height: 2.333333rem;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  padding: 0.68rem 0;
+  z-index: 999;
+}
+
+.btn-bar .submit-btn {
+  display: block;
+  border: 0.08rem solid #ff0000;
+  color: #ff0000;
+  text-align: center;
+  width: 3.6rem;
+  height: 0.973333rem;
+  background-color: transparent;
+  padding: 0;
+  outline: none;
+}
+
+.msg-wrapper {
+  position: fixed;
+  top: 0.266667rem;
+  left: 50%;
+  margin-left: -2.533333rem;
+  min-width: 4.533333rem;
+  z-index: 999;
+  border-radius: 0.053333rem;
+  border: 0.013333rem solid #e6ebf5;
+  background-color: #edf2fc;
+  padding: 0.2rem 0.2rem 0.2rem 0.266667rem;
+  text-align: center;
+}
+
+.msg-wrapper[data-role=success] {
+  background-color: #f0f9eb;
+  border-color: #e1f3d8;
+}
+
+.msg-wrapper[data-role=success] .msg-title {
+  color: #67c23a;
+}
+
+.msg-wrapper[data-role=error] {
+  background-color: #fee;
+  border-color: #fedddd;
+}
+
+.msg-wrapper[data-role=error] .msg-title {
+  color: #fa5555;
+}
+
+.msg-wrapper .close-btn {
+  position: absolute;
+  top: 0.2rem;
+  right: 0.2rem;
+  width: 0.266667rem;
+  height: 0.266667rem;
+  background: url("../../img/icon/exam-close.png") no-repeat center center;
 }
