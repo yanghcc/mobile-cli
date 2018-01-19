@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+    <title>锋锐汽车评比</title>
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="yes" name="apple-touch-fullscreen">
+    <link rel="stylesheet" href="combined/combined.css?v=3e2807ac230dd5168b68bb0cb87c890c">
+    <style>@charset "UTF-8";.icon_lists,.sprite-list{margin-left:auto;margin-right:auto}.sprite{background-image:url("../img/sprite.png");background-repeat:no-repeat;background-size:4.04rem 2.44rem}.main{padding:.266667rem}.icon_lists{width:9.333333rem}.icon_lists li{float:left;width:1.333333rem;height:1.333333rem;text-align:center}.icon_lists .icon{font-size:.56rem;line-height:1.333333rem;margin:.133333rem 0;color:#333;transition:font-size .25s ease-out 0s}.icon_lists .icon:hover{font-size:1.333333rem}.base_list{text-align:center;font-size:.346667rem}.btn_wrap{margin-top:.266667rem}.sprite-list{width:8rem}.sprite{width:1.333333rem;height:1.066667rem;float:left;margin-top:.266667rem;margin-bottom:.266667rem}.sprite-item1{background-position:-1.586667rem 0}.sprite-item2{background-position:0 0}.sprite-item3{background-position:-1.346667rem -1.36rem}.sprite-item4{background-position:-2.933333rem 0}.sprite-item5{background-position:0 -1.36rem}.sprite-item6{background-position:-2.933333rem -1.2rem}</style>
+    <!-- 引入移动端适配方案 -->
+    <script src="static/js/flexible.js?v=4474e0337b3aaeec9b5c6565e130f2e5"></script>
+</head>
+
+<body>
+    <!-- loading -->
+    <div style="color: #76bf57" class="la-ball-atom la-3x loading" id="loading">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <!-- /loading -->
+
+    <!-- main -->
+    <div class="main hidden" id="container">
+        <!-- 雪碧图示例 -->
+        <ul class="sprite-list clearfix">
+            <li class="sprite sprite-item1"></li>
+            <li class="sprite sprite-item2"></li>
+            <li class="sprite sprite-item3"></li>
+            <li class="sprite sprite-item4"></li>
+            <li class="sprite sprite-item5"></li>
+            <li class="sprite sprite-item6"></li>
+        </ul>
+        <!-- /雪碧图示例 -->
+    </div>
+
+    <!-- /main -->
+    <script>
+    var global = {
+        rootUrl: "{$rooturl}", //root地址
+        openid: "{$openid}", //openid
+        bdloginUrl: "{:U('YiYatong/bdloginajax')}", //ajax请求地址
+        resultPage: "{:U('YiYatong/result')}" //跳转页面地址
+    }
+    </script>
+
+    <script src="combined/combined.js?v=b6231b11feda61093e81552e7f3ddef6"></script>
+
+    <script>var Project=function(){var t=function(){var t=$(this);if(!t.hasClass("disabled")){t.addClass("disabled");var n={time:3};$.ajax({url:"http://wiki.xyzphp.com/t.php",type:"POST",data:n,beforeSend:function(){lnv.pageloading()}}).done(function(t){t="string"==typeof t?JSON.parse(t):t,200==t.status?0===t.data.length&&lnv.alert({title:"提示",content:"没有数据",alertBtnText:"确定",alertHandler:function(){alert("点击了确定")}}):alert("error")}).fail(function(t,n,a){alert("error")}).always(function(){lnv.destroyloading(),t.removeClass("disabled")})}},n=function(){$("#submit_btn").on("tap",t)},a=function(){n()};return{init:a}}();</script>
+    <script>
+    $(function() {
+
+        Project.init();
+
+        //页面加载完毕显示主内容
+        $("#loading").addClass("hidden")
+        $("#container").removeClass("hidden");
+
+    })
+    </script>
+
+</body>
+
+</html>

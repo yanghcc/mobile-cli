@@ -222,7 +222,7 @@ gulp.task('dev_sprite', function () {
         imgName: 'sprite.png',
         cssName: '_sprite.scss',
         padding: 20, // 图标之间的距离
-        algorithm: 'binary-tree', // 图标的排序方式
+        algorithm: 'top-down', // 图标的排序方式
         cssTemplate: './gulp/sprite/handlebarsInheritance.scss.handlebars' // 模板
     }));
 

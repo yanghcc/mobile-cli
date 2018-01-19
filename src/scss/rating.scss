@@ -11,10 +11,11 @@
 }
 .sprite {
   height:164px;
+  background-position-x: 50%!important;
 }
 
 .sprite-title-bg1 {
-  @include sprite-title-bg1;
+  @include sprite-title-bg3;
 }
 
 .sprite-title-bg2 {
@@ -22,7 +23,7 @@
 }
 
 .sprite-title-bg3 {
-  @include sprite-title-bg3;
+  @include sprite-title-bg1;
 }
 
 body{
@@ -153,6 +154,5 @@ body{
     right: 15px;
     width: 20px;
     height: 20px;
-    background: url("../../img/icon/exam-close.png") no-repeat center center;
   }
 }
