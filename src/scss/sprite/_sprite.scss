@@ -18,13 +18,17 @@
 }
 
 @mixin sprite-title-bg3 {
+    background-position: 0px -502px;
+}
+
+@mixin sprite-title-bg4 {
     background-position: 0px 0px;
 }
 
 .sprite {
     background-image: url('../img/sprite.png');
     background-repeat: no-repeat;
-    background-size: 750px 482px;
+    background-size: 750px 654px;
 }
 
 

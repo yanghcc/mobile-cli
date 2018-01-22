@@ -25,7 +25,9 @@
 .sprite-title-bg3 {
   @include sprite-title-bg3;
 }
-
+.sprite-title-bg4{
+  @include sprite-title-bg4;
+}
 body{
   padding-bottom: 175px;
 }
